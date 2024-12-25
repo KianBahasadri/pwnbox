@@ -1,0 +1,13 @@
+services:
+  pwnbox:
+    build: .
+    container_name: sunshine
+    restart: unless-stopped
+    volumes:
+      - ./sunshine:/config
+    ipc: host
+    ports:
+      - "47984-47990:47984-47990/tcp"
+      - "48010:48010"
+      - "47998-48000:47998-48000/udp"
+
